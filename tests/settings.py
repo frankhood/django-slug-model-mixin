@@ -31,8 +31,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django_slug_model_mixin',
-    
 
+    'tests.example',
     # if your app has other dependencies that need to be added to the site
     # they should be added here
 ]

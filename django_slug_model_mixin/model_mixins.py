@@ -1,13 +1,16 @@
 from django.db import models
-from django.utils.text import slugify
 import datetime
-import time
 import logging
+import time
+
+from django.db import models
+from django.utils.text import slugify
 
 logger = logging.getLogger('django-slug-model-mixin')
 
 try:
-    from uuslug import uuslug as slugify
+    from uuslug import uuslug
+
     USE_UUSLUG = True
 except ImportError:
     USE_UUSLUG = False
