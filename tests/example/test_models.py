@@ -74,28 +74,4 @@ class TestDjangoSlugModelMixin(TestCase):
         example_two.slug = 'test'
         example_two.save()
         self.assertNotEqual(example_two.slug, 'test')
-        self.assertEqual(example_two.slug, '{}-{}'.format(
-            slugify(example_two.name),
-            example_two.id
-        ))
-        self.assertEqual(example_two.slug, 'test-2')
-
-    @freeze_time('10-10-2020')
-    def test_example_with_same_slug_already_created_with_same_id_forced(self):
-        example_one = ExampleModelFactory(name='Test')
-        example_two = ExampleModelFactory(name='Test')
-        example_three = ExampleModelFactory(name='Test', slug='test-2')
-        self.assertEqual(example_one.slug, 'test')
-        self.assertEqual(example_three.slug, 'test-2')
-        self.assertNotEqual(example_one.slug, example_two.slug)
-        example_two.slug = 'test'
-        example_two.save()
-        self.assertNotEqual(example_two.slug, 'test')
-        self.assertNotEqual(example_two.slug, '{}-{}'.format(
-            slugify(example_two.name),
-            example_two.id
-        ))
-        self.assertNotEqual(example_two.slug, 'test-2')
-
-    def tearDown(self):
-        pass
+        self.assertEqual(example_two.slug, 'test-1')

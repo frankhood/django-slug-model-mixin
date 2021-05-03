@@ -1,19 +1,13 @@
-from django.db import models
 import datetime
 import logging
 import time
 
 from django.db import models
 from django.utils.text import slugify
+from uuslug import uuslug
 
 logger = logging.getLogger('django-slug-model-mixin')
 
-try:
-    from uuslug import uuslug
-
-    USE_UUSLUG = True
-except ImportError:
-    USE_UUSLUG = False
 
 
 class SlugModelMixin(models.Model):
@@ -27,74 +21,32 @@ class SlugModelMixin(models.Model):
         abstract = True
         # unique_together = ('slug',)
 
+    def _slug_is_unique(self, slug: str, object_id: int = None) -> bool:
+        try:
+            if object_id:
+                self.__class__._default_manager.exclude(id=self.id).get(slug=slug)
+            else:
+                self.__class__._default_manager.get(slug=slug)
+            return False
+        except self.__class__.DoesNotExist:
+            return True
+
     def save(self, *args, **kwargs):
         _slugged_field = getattr(self, self.slugged_field)
         if not self.slug:
             if self.force_slugify:
-                if not self.slug_unique:
+                if not self.slug_unique or (self.id and self._slug_is_unique(_slugged_field, self.id)):
                     self.slug = slugify(_slugged_field)[:50]
-                elif USE_UUSLUG and self.slug_unique:
+                elif self.slug_unique:
                     self.slug = uuslug(_slugged_field, instance=self)
-                else:
-                    slug = slugify(_slugged_field)[:50]
-                    if self.id:
-                        try:
-                            self.__class__._default_manager.exclude(id=self.id).get(slug=slug)
-                        except self.__class__.DoesNotExist:
-                            self.slug = slug
-                        else:
-                            slug_id = '%s-%d' % (slug[:35], self.id)
-                            try:
-                                self.__class__._default_manager.exclude(id=self.id).get(slug=slug_id)
-                            except self.__class__.DoesNotExist:
-                                self.slug = slug_id
-                            else:
-                                # NOTE: non posso basarmi sull'id poichè non rispetta il requisito di univocità.
-                                n = datetime.datetime.now()
-                                t = int(time.mktime(n.timetuple()))
-                                slug_ts = '%s-%d' % (slug[:35], t)
-                                self.slug = slug_ts
-                    else:
-                        try:
-                            self.__class__._default_manager.get(slug=slug)
-                        except self.__class__.DoesNotExist:
-                            self.slug = slug
-                        else:
-                            # NOTE: non posso basarmi sull'id poichè non è stato ancora generato.
-                            n = datetime.datetime.now()
-                            t = int(time.mktime(n.timetuple()))
-                            slug_ts = '%s-%d' % (slug[:35], t)
-                            self.slug = slug_ts
         else:
             if self.slug_unique:
-                if self.slug and self.slug_unique:
-                    slug = self.slug
-                    if self.id:
-                        try:
-                            self.__class__._default_manager.exclude(id=self.id).get(slug=slug)
-                        except self.__class__.DoesNotExist:
-                            self.slug = slug
-                        else:
-                            slug_id = '%s-%d' % (slug[:35], self.id)
-                            try:
-                                self.__class__._default_manager.exclude(id=self.id).get(slug=slug_id)
-                            except self.__class__.DoesNotExist:
-                                self.slug = slug_id
-                            else:
-                                # NOTE: non posso basarmi sull'id poichè non rispetta il requisito di univocità.
-                                n = datetime.datetime.now()
-                                t = int(time.mktime(n.timetuple()))
-                                slug_ts = '%s-%d' % (slug[:35], t)
-                                self.slug = slug_ts
-                    else:
-                        try:
-                            self.__class__._default_manager.get(slug=slug)
-                        except self.__class__.DoesNotExist:
-                            self.slug = slug
-                        else:
-                            # NOTE: non posso basarmi sull'id poichè non è stato ancora generato.
-                            n = datetime.datetime.now()
-                            t = int(time.mktime(n.timetuple()))
-                            slug_ts = '%s-%d' % (slug[:35], t)
-                            self.slug = slug_ts
+                slug = self.slug
+                if (
+                    (self.id and self._slug_is_unique(slug, self.id))
+                    or (not self.id and self._slug_is_unique(slug))
+                ):
+                    self.slug = slug
+                else:
+                    self.slug = uuslug(slug, instance=self)
         super(SlugModelMixin, self).save(*args, **kwargs)
