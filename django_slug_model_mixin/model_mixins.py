@@ -1,6 +1,4 @@
-import datetime
 import logging
-import time
 
 from django.db import models
 from django.utils.text import slugify
@@ -9,13 +7,12 @@ from uuslug import uuslug
 logger = logging.getLogger('django-slug-model-mixin')
 
 
-
 class SlugModelMixin(models.Model):
-    slugged_field = 'title'  # 'title or name or what ever
-    slug_unique = True  # 'title or name or what ever
+    slugged_field = 'title'
+    slug_unique = True
     force_slugify = False
 
-    slug = models.SlugField()  # eliminato unique=True x la questione della preview e del linguaggio...
+    slug = models.SlugField()
 
     class Meta:
         abstract = True
