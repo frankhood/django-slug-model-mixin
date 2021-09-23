@@ -1,6 +1,6 @@
 from django.db import models
 
-from django_slug_model_mixin.model_mixins import SlugModelMixin
+from slug_model_mixin.model_mixins import SlugModelMixin
 
 
 class ExampleModel(SlugModelMixin, models.Model):

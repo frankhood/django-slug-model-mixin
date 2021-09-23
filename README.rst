@@ -29,14 +29,9 @@ Add it to your `INSTALLED_APPS`:
 
     INSTALLED_APPS = (
         ...
-        'django_slug_model_mixin',
+        'slug_model_mixin',
         ...
     )
-
-Features
---------
-
-* TODO
 
 Running Tests
 -------------
@@ -46,8 +41,8 @@ Does the code actually work?
 ::
 
     source <YOURVIRTUALENV>/bin/activate
-    (myenv) $ pip install tox
-    (myenv) $ tox
+    (myenv) $ pip install -r requirements_test.txt
+    (myenv) $ python runtest.py
 
 
 Development commands
@@ -56,7 +51,6 @@ Development commands
 ::
 
     pip install -r requirements_dev.txt
-    invoke -l
 
 
 Credits

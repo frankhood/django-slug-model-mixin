@@ -77,7 +77,7 @@ Ready to contribute? Here's how to set up `django-slug-model-mixin` for local de
 5. When you're done making changes, check that your changes pass flake8 and the
    tests, including testing other Python versions with tox::
 
-        $ flake8 django_slug_model_mixin tests
+        $ flake8 slug_model_mixin tests
         $ python setup.py test
         $ tox
 
@@ -109,4 +109,4 @@ Tips
 
 To run a subset of tests::
 
-    $ python -m unittest tests.test_django_slug_model_mixin
+    $ python -m unittest tests.test_slug_model_mixin
