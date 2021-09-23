@@ -3,3 +3,5 @@ twine
 wheel
 zest.releaser
 
+Django>=2.2
+django-uuslug

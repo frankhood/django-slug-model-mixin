@@ -50,7 +50,7 @@ def docs(c):
     """
     c.run("rm -f docs/django-slug-model-mixin.rst")
     c.run("rm -f docs/modules.rst")
-    c.run("sphinx-apidoc -o docs/ django_slug_model_mixin")
+    c.run("sphinx-apidoc -o docs/ slug_model_mixin")
 
     c.run("sphinx-build -E -b html docs docs/_build")
     open_browser(path='docs/_build/html/index.html')
@@ -100,10 +100,10 @@ def release(c, bumpsize=''):
 
     c.run("bumpversion {bump} --no-input".format(bump=bumpsize))
 
-    import django_slug_model_mixin
+    import slug_model_mixin
     c.run("python setup.py sdist bdist_wheel")
     c.run("twine upload dist/*")
 
-    c.run('git tag -a {version} -m "New version: {version}"'.format(version=django_slug_model_mixin.__version__))
+    c.run('git tag -a {version} -m "New version: {version}"'.format(version=slug_model_mixin.__version__))
     c.run("git push --tags")
     c.run("git push origin master")

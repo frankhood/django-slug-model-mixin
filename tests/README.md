@@ -1,4 +1,4 @@
-## Example Project for django_slug_model_mixin
+## Example Project for slug_model_mixin
 
 This example is provided as a convenience feature to allow potential users to try the app straight from the app repo without having to create a django project.
 

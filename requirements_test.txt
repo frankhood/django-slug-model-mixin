@@ -9,3 +9,6 @@ faker
 freezegun
 model_bakery
 # Additional test requirements go here
+
+Django>=2.2
+django-uuslug

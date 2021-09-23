@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'django_slug_model_mixin',
+    'slug_model_mixin',
 
     'tests.example',
     # if your app has other dependencies that need to be added to the site

@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 
 class DjangoSlugModelMixinConfig(AppConfig):
-    name = 'django_slug_model_mixin'
+    name = 'slug_model_mixin'

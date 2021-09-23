@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 
 """
-test_django-slug-model-mixin
+django-slug-model-mixin
 ------------
 
-Tests for `django-slug-model-mixin` models module.
+Tests for `slug-model-mixin` models module.
 """
 
 import sys
