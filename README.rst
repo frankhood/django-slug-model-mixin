@@ -8,8 +8,9 @@ Django Slug Model Mixin
 .. image:: https://travis-ci.org/frankhood/django-slug-model-mixin.svg?branch=master
     :target: https://travis-ci.org/frankhood/django-slug-model-mixin
 
-.. image:: https://codecov.io/gh/frankhood/django-slug-model-mixin/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/frankhood/django-slug-model-mixin
+.. image:: https://img.shields.io/coveralls/github/frankhood/django-slug-model-mixin/master?style=flat-square
+    :target: https://coveralls.io/github/frankhood/django-slug-model-mixin?branch=master
+    :alt: Coverage Status
 
 Your project description goes here
 
