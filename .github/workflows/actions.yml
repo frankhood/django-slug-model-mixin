@@ -58,6 +58,9 @@ jobs:
   upload-to-coverage:
     needs: test
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
     steps:
     - name: Coveralls Finished
       run: |
