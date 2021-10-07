@@ -71,7 +71,7 @@ jobs:
         SH_TESTS_RUNNING=1 SH_TESTS_USE_SELECT=0 LANG=en_US.UTF-8 coverage run -a --source=sh -m unittest
         SH_TESTS_RUNNING=1 SH_TESTS_USE_SELECT=1 LANG=en_US.UTF-8 coverage run -a --source=sh -m unittest
         coveralls --service=github
-      with:
+      env:
         github-token: ${{ secrets.github_token }}
 
 
