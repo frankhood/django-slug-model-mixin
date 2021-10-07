@@ -1,0 +1,14 @@
+-r requirements_dev.in
+
+coverage
+mock
+flake8
+tox
+codecov
+
+factory_boy
+faker
+freezegun
+model_bakery
+
+django-uuslug

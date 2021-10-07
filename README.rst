@@ -2,19 +2,22 @@
 Django Slug Model Mixin
 =============================
 
-.. image:: https://badge.fury.io/py/django-slug-model-mixin.svg
+.. image:: https://badge.fury.io/py/django-slug-model-mixin.svg/?style=flat-square
     :target: https://badge.fury.io/py/django-slug-model-mixin
 
-.. image:: https://travis-ci.org/frankhood/django-slug-model-mixin.svg?branch=master
-    :target: https://travis-ci.org/frankhood/django-slug-model-mixin
+.. image:: https://readthedocs.org/projects/pip/badge/?version=latest&style=flat-square
+    :target: https://django-slug-model-mixin.readthedocs.io/en/latest/
 
-.. image:: https://codecov.io/gh/frankhood/django-slug-model-mixin/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/frankhood/django-slug-model-mixin
+.. image:: https://img.shields.io/coveralls/github/frankhood/django-slug-model-mixin/main?style=flat-square
+    :target: https://coveralls.io/github/frankhood/django-slug-model-mixin?branch=main
+    :alt: Coverage Status
 
-Overview
+Slugify model mixin to manage slugged fields in your project models.
+
+Documentation
 -------------
 
-A slug model mixin to have slugify feature on your models
+The full documentation is at https://django-slug-model-mixin.readthedocs.io.
 
 Quickstart
 ----------
@@ -33,6 +36,25 @@ Add it to your `INSTALLED_APPS`:
         ...
     )
 
+Use the SlugModelMixin in your model:
+
+.. code-block:: python
+
+    class ExampleModel(SlugModelMixin, models.Model):
+    slugged_field = 'name'  # insert the name of the field you want to slugify
+    slug_unique = False # remove unique for your slug
+    force_slugify = True # force the slugify using uuslug
+
+    name = models.CharField(
+        'Name',
+        max_length=255
+    )
+
+    class Meta:
+        verbose_name = 'Example Model'
+        verbose_name_plural = 'Example Models'
+
+
 Running Tests
 -------------
 
@@ -41,8 +63,8 @@ Does the code actually work?
 ::
 
     source <YOURVIRTUALENV>/bin/activate
-    (myenv) $ pip install -r requirements_test.txt
-    (myenv) $ python runtest.py
+    (myenv) $ pip install tox
+    (myenv) $ tox
 
 
 Development commands
@@ -51,6 +73,7 @@ Development commands
 ::
 
     pip install -r requirements_dev.txt
+    invoke -l
 
 
 Credits
