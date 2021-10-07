@@ -33,7 +33,7 @@ jobs:
       run: |
         python -m pip install coveralls==3.1.0
         python -m pip install .
-        python -m flake8 sh.py test.py
+        python -m runtest.py
         python setup.py check --restructuredtext --metadata --strict
         SH_TESTS_RUNNING=1 SH_TESTS_USE_SELECT=0 LANG=C coverage run -a --source=sh -m unittest
         SH_TESTS_RUNNING=1 SH_TESTS_USE_SELECT=1 LANG=C coverage run -a --source=sh -m unittest
