@@ -46,7 +46,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 requirements = open('requirements.txt').readlines()
 
 setup(
-    name='slug-model-mixin',
+    name='django-slug-model-mixin',
     version=version,
     description="""A slug model mixin to have slugify feature on your models""",
     long_description=readme + '\n\n' + history,
