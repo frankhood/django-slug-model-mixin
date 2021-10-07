@@ -1,4 +1,4 @@
-name: {{ cookiecutter.project_name }} CI
+name: django-slug-model-mixin CI
 
 on:
   push:
