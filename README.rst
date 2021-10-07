@@ -41,14 +41,14 @@ Use the SlugModelMixin in your model:
 .. code-block:: python
 
     class ExampleModel(SlugModelMixin, models.Model):
-    slugged_field = 'name'  # insert the name of the field you want to slugify
-    slug_unique = False # remove unique for your slug
-    force_slugify = True # force the slugify using uuslug
+        slugged_field = 'name'  # insert the name of the field you want to slugify
+        slug_unique = False # remove unique for your slug
+        force_slugify = True # force the slugify using uuslug
 
-    name = models.CharField(
-        'Name',
-        max_length=255
-    )
+        name = models.CharField(
+            'Name',
+            max_length=255
+        )
 
     class Meta:
         verbose_name = 'Example Model'
