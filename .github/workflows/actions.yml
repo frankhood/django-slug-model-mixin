@@ -52,7 +52,7 @@ jobs:
         uses: codecov/codecov-action@v2
         with:
           flags: unittests
-          token: ${{ secrets.GIT_ACTIONS }}
+          # token: ${{ secrets.GIT_ACTIONS }}
 
 
   read-the-docs:
