@@ -32,3 +32,8 @@ History
 ++++++++++++++++++
 
 * Changed from test.pipy.org to pipy.org
+
+0.1.7 (2021-10-07)
+++++++++++++++++++
+
+* Updated github action
