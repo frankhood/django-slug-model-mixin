@@ -8,7 +8,7 @@ To use Django Slug Model Mixin in a project, add it to your `INSTALLED_APPS`:
 
     INSTALLED_APPS = (
         ...
-        'slug_model_mixin',
+        'slug_model_mixin.apps.SlugModelMixinConfig',
         ...
     )
 

@@ -11,10 +11,12 @@ Django Slug Model Mixin
 .. image:: https://codecov.io/gh/frankhood/django-slug-model-mixin/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/frankhood/django-slug-model-mixin
 
-Overview
+Your project description goes here
+
+Documentation
 -------------
 
-A slug model mixin to have slugify feature on your models
+The full documentation is at https://django-slug-model-mixin.readthedocs.io.
 
 Quickstart
 ----------
@@ -33,6 +35,24 @@ Add it to your `INSTALLED_APPS`:
         ...
     )
 
+Add Django Slug Model Mixin's URL patterns:
+
+.. code-block:: python
+
+    from slug_model_mixin import urls as slug_model_mixin_urls
+
+
+    urlpatterns = [
+        ...
+        url(r'^', include(slug_model_mixin_urls)),
+        ...
+    ]
+
+Features
+--------
+
+* TODO
+
 Running Tests
 -------------
 
@@ -41,8 +61,8 @@ Does the code actually work?
 ::
 
     source <YOURVIRTUALENV>/bin/activate
-    (myenv) $ pip install -r requirements_test.txt
-    (myenv) $ python runtest.py
+    (myenv) $ pip install tox
+    (myenv) $ tox
 
 
 Development commands
@@ -51,6 +71,7 @@ Development commands
 ::
 
     pip install -r requirements_dev.txt
+    invoke -l
 
 
 Credits
