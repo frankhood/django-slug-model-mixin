@@ -8,8 +8,8 @@ Django Slug Model Mixin
 .. image:: https://readthedocs.org/projects/pip/badge/?version=latest&style=flat-square
     :target: https://django-slug-model-mixin.readthedocs.io/en/latest/
 
-.. image:: https://img.shields.io/coveralls/github/frankhood/django-slug-model-mixin/master?style=flat-square
-    :target: https://coveralls.io/github/frankhood/django-slug-model-mixin?branch=master
+.. image:: https://img.shields.io/coveralls/github/frankhood/django-slug-model-mixin/main?style=flat-square
+    :target: https://coveralls.io/github/frankhood/django-slug-model-mixin?branch=main
     :alt: Coverage Status
 
 Slugify model mixin to manage slugged fields in your project models.
