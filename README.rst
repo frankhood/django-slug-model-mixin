@@ -2,7 +2,7 @@
 Django Slug Model Mixin
 =============================
 
-.. image:: https://badge.fury.io/py/django-slug-model-mixin.svg?style=flat-square
+.. image:: https://badge.fury.io/py/django-slug-model-mixin.svg/?style=flat-square
     :target: https://badge.fury.io/py/django-slug-model-mixin
 
 .. image:: https://readthedocs.org/projects/pip/badge/?version=latest&style=flat-square
@@ -36,23 +36,24 @@ Add it to your `INSTALLED_APPS`:
         ...
     )
 
-Add Django Slug Model Mixin's URL patterns:
+Use the SlugModelMixin in your model:
 
 .. code-block:: python
 
-    from slug_model_mixin import urls as slug_model_mixin_urls
+    class ExampleModel(SlugModelMixin, models.Model):
+    slugged_field = 'name'  # insert the name of the field you want to slugify
+    slug_unique = False # remove unique for your slug
+    force_slugify = True # force the slugify using uuslug
 
+    name = models.CharField(
+        'Name',
+        max_length=255
+    )
 
-    urlpatterns = [
-        ...
-        url(r'^', include(slug_model_mixin_urls)),
-        ...
-    ]
+    class Meta:
+        verbose_name = 'Example Model'
+        verbose_name_plural = 'Example Models'
 
-Features
---------
-
-* TODO
 
 Running Tests
 -------------
