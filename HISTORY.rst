@@ -23,8 +23,12 @@ History
 
 * Rework configurations and added github actions
 
-
 0.1.5 (2021-10-07)
 ++++++++++++++++++
 
 * Added pipy on github actions and fixed setup.py
+
+0.1.6 (2021-10-07)
+++++++++++++++++++
+
+* Changed from test.pipy.org to pipy.org
