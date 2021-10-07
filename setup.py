@@ -21,7 +21,7 @@ def get_version(*file_paths):
     raise RuntimeError('Unable to find version string.')
 
 
-version = get_version("slug_model_mixin", "__init__.py")
+version = '0.1.0'
 
 
 if sys.argv[-1] == 'publish':
@@ -48,9 +48,9 @@ requirements = open('requirements.txt').readlines()
 setup(
     name='slug-model-mixin',
     version=version,
-    description="""A slug model mixin to have slugify feature on your models""",
+    description="""Your project description goes here""",
     long_description=readme + '\n\n' + history,
-    author='FrankHood Business Solutions SRL',
+    author='FrankHood Business Solutions srl',
     author_email='info@frankhood.it',
     url='https://github.com/frankhood/django-slug-model-mixin',
     packages=[
@@ -63,15 +63,14 @@ setup(
     keywords='django-slug-model-mixin',
     classifiers=[
         'Development Status :: 3 - Alpha',
-        'Framework :: Django :: 1.11',
-        'Framework :: Django :: 2.1',
+        'Framework :: Django :: 2.2',
+        'Framework :: Django :: 3.2',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
     ],
 )

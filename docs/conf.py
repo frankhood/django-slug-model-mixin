@@ -11,7 +11,8 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import sys, os
+import os
+import sys
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -47,7 +48,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Django Slug Model Mixin'
-copyright = u'2021, FrankHood Business Solutions SRL'
+copyright = u'2021, FrankHood Business Solutions srl'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -193,7 +194,7 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'django-slug-model-mixin.tex', u'Django Slug Model Mixin Documentation',
-   u'FrankHood Business Solutions SRL', 'manual'),
+   u'FrankHood Business Solutions srl', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -223,7 +224,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'django-slug-model-mixin', u'Django Slug Model Mixin Documentation',
-     [u'FrankHood Business Solutions SRL'], 1)
+     [u'FrankHood Business Solutions srl'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -237,7 +238,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'django-slug-model-mixin', u'Django Slug Model Mixin Documentation',
-   u'FrankHood Business Solutions SRL', 'django-slug-model-mixin', 'One line description of project.',
+   u'FrankHood Business Solutions srl', 'django-slug-model-mixin', 'One line description of project.',
    'Miscellaneous'),
 ]
 

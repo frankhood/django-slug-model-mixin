@@ -2,18 +2,13 @@
 # -*- coding: utf-8 -*-
 
 """
-django-slug-model-mixin
+test_django-slug-model-mixin
 ------------
 
-Tests for `slug-model-mixin` models module.
+Tests for `django-slug-model-mixin` models module.
 """
-
-import sys
-
-import mock
 from django.test import TestCase
 from django.utils.text import slugify
-from freezegun import freeze_time
 
 from tests.example.factories import (
     ExampleModelFactory,
@@ -74,28 +69,4 @@ class TestDjangoSlugModelMixin(TestCase):
         example_two.slug = 'test'
         example_two.save()
         self.assertNotEqual(example_two.slug, 'test')
-        self.assertEqual(example_two.slug, '{}-{}'.format(
-            slugify(example_two.name),
-            example_two.id
-        ))
-        self.assertEqual(example_two.slug, 'test-2')
-
-    @freeze_time('10-10-2020')
-    def test_example_with_same_slug_already_created_with_same_id_forced(self):
-        example_one = ExampleModelFactory(name='Test')
-        example_two = ExampleModelFactory(name='Test')
-        example_three = ExampleModelFactory(name='Test', slug='test-2')
-        self.assertEqual(example_one.slug, 'test')
-        self.assertEqual(example_three.slug, 'test-2')
-        self.assertNotEqual(example_one.slug, example_two.slug)
-        example_two.slug = 'test'
-        example_two.save()
-        self.assertNotEqual(example_two.slug, 'test')
-        self.assertNotEqual(example_two.slug, '{}-{}'.format(
-            slugify(example_two.name),
-            example_two.id
-        ))
-        self.assertNotEqual(example_two.slug, 'test-2')
-
-    def tearDown(self):
-        pass
+        self.assertEqual(example_two.slug, 'test-1')
