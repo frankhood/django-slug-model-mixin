@@ -12,7 +12,7 @@ Django Slug Model Mixin
     :target: https://coveralls.io/github/frankhood/django-slug-model-mixin?branch=main
     :alt: Coverage Status
 
-Your project description goes here
+Slugify model mixin to manage slugged fields in your project models.
 
 Documentation
 -------------
