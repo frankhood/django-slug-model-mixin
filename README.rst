@@ -2,8 +2,8 @@
 Django Slug Model Mixin
 =============================
 
-.. image:: https://badge.fury.io/py/slug-model-mixin.svg/?style=flat-square
-    :target: https://badge.fury.io/py/slug-model-mixin
+.. image:: https://badge.fury.io/py/django-slug-model-mixin.svg/?style=flat-square
+    :target: https://badge.fury.io/py/django-slug-model-mixin
 
 .. image:: https://readthedocs.org/projects/pip/badge/?version=latest&style=flat-square
     :target: https://django-slug-model-mixin.readthedocs.io/en/latest/
