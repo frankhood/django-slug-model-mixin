@@ -37,3 +37,13 @@ History
 ++++++++++++++++++
 
 * Updated github action
+
+0.1.7 (2021-10-07)
+++++++++++++++++++
+
+* Updated github action
+
+0.1.8 (2021-10-19)
+++++++++++++++++++
+
+* Updated version for github actions and changed name to django-slug-model-mixin
