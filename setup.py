@@ -46,9 +46,9 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 requirements = open('requirements.txt').readlines()
 
 setup(
-    name='slug-model-mixin',
+    name='django-slug-model-mixin',
     version=version,
-    description="""Your project description goes here""",
+    description="""Slugify model mixin to manage slugged fields in your project models.""",
     long_description=readme + '\n\n' + history,
     author='FrankHood Business Solutions srl',
     author_email='info@frankhood.it',
