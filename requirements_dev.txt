@@ -4,40 +4,65 @@
 #
 #    pip-compile --output-file=requirements_dev.txt requirements_dev.in
 #
+backports.entry-points-selectable==1.1.1
+    # via virtualenv
 bleach==4.1.0
     # via readme-renderer
 bump2version==1.0.1
     # via bumpversion
 bumpversion==0.6.0
     # via -r requirements_dev.in
-certifi==2021.5.30
+certifi==2021.10.8
     # via requests
-charset-normalizer==2.0.6
+cfgv==3.3.1
+    # via pre-commit
+charset-normalizer==2.0.7
     # via requests
 colorama==0.4.4
     # via
     #   twine
     #   zest.releaser
-docutils==0.17.1
+distlib==0.3.3
+    # via virtualenv
+docutils==0.18
     # via readme-renderer
-idna==3.2
+filelock==3.4.0
+    # via virtualenv
+identify==2.4.0
+    # via pre-commit
+idna==3.3
     # via requests
-importlib-metadata==4.8.1
+importlib-metadata==4.8.2
     # via
+    #   backports.entry-points-selectable
     #   keyring
+    #   pre-commit
     #   twine
+    #   virtualenv
+importlib-resources==5.4.0
+    # via
+    #   pre-commit
+    #   virtualenv
 invoke==1.6.0
     # via -r requirements_dev.in
 keyring==23.2.1
     # via twine
-packaging==21.0
+nodeenv==1.6.0
+    # via pre-commit
+packaging==21.3
     # via bleach
-pkginfo==1.7.1
+pkginfo==1.8.1
     # via twine
+platformdirs==2.4.0
+    # via virtualenv
+pre-commit==2.15.0
+    # via -r requirements_dev.in
 pygments==2.10.0
     # via readme-renderer
-pyparsing==2.4.7
+pyparsing==3.0.6
     # via packaging
+pyyaml==6.0
+    # via pre-commit
 readme-renderer==30.0
     # via twine
 requests==2.26.0
@@ -52,25 +77,32 @@ rfc3986==1.5.0
 six==1.16.0
     # via
     #   bleach
+    #   virtualenv
     #   zest.releaser
+toml==0.10.2
+    # via pre-commit
 tqdm==4.62.3
     # via twine
-twine==3.4.2
+twine==3.6.0
     # via
     #   -r requirements_dev.in
     #   zest.releaser
-typing-extensions==3.10.0.2
+typing-extensions==4.0.0
     # via importlib-metadata
 urllib3==1.26.7
     # via requests
+virtualenv==20.10.0
+    # via pre-commit
 webencodings==0.5.1
     # via bleach
 wheel==0.37.0
     # via -r requirements_dev.in
-zest.releaser==6.22.1
+zest.releaser==6.22.2
     # via -r requirements_dev.in
 zipp==3.6.0
-    # via importlib-metadata
+    # via
+    #   importlib-metadata
+    #   importlib-resources
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools

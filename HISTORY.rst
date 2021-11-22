@@ -52,3 +52,8 @@ History
 ++++++++++++++++++
 
 * Updated version for github actions
+
+0.2.0 (2021-11-22)
+++++++++++++++++++
+
+* Fixed slug with spaces bug
