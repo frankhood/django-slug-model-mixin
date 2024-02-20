@@ -1,6 +1,2 @@
 invoke
-twine
-wheel
-zest.releaser
-bumpversion
 pre-commit
